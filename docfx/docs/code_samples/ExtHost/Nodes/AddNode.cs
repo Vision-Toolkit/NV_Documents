@@ -1,0 +1,28 @@
+﻿using FlowEngine.Abstractions.ExecutionEngine;
+using FlowEngine.Avalonia.GraphModel;
+using FlowEngine.Avalonia.Misc;
+
+namespace ExtHost.Nodes;
+
+
+public class AddNode : MethodNodeBase
+{
+    private readonly DataConnector<int> inputx;
+    private readonly DataConnector<int> inputy;
+    private readonly DataConnector<int> output;
+
+    public AddNode()
+    {
+        Title = "Add";
+        inputx = this.CreateInput(1, "x");
+        inputy = this.CreateInput(2, "y");
+        output = this.CreateOutput(0, "value");
+    }
+
+    public override NodeExecResult OnExecute(INodeExecutionContext context)
+    {
+        var ret = context.GetPortValue(inputx) + context.GetPortValue(inputy);
+        context.SetPortValue(output, ret);
+        return SuccessResult;
+    }
+}
