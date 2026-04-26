@@ -4,14 +4,20 @@
     {
       "src": [
         {
-          "src": "F:/Work/FlowEngine/src/FlowEngine.Avalonia",
+          "src": "F:/TachyonProject/dev/Tachyon/sdk/TachyonSDK",
+          "files": [
+            "bin/Debug/net9.0/*.dll"
+          ]
+        },
+        {
+          "src": "F:/TachyonProject/dev/Tachyon/sdk/TachyonSDK.Extra",
           "files": [
             "bin/Debug/net9.0/*.dll"
           ]
         },
         {
           
-          "src": "F:/NodeProjects/docfx/code_samples",
+          "src": "F:/TachyonProject/dev/Tachyon/ext/SampleExtension",
           "files": [
           ]
         }
@@ -46,7 +52,7 @@
       "_appName": "奥创",
       "_appTitle": "奥创",
       "_enableSearch": true,
-      "pdf": true
+      "pdf": false
     },
     "markdownEngineProperties": {
       "alerts": {

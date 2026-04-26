@@ -1,0 +1,36 @@
+﻿<Window
+    Name="root"
+    Title="SamplePropertyDialog"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="SampleExtension.Views.SamplePropertyDialog"
+    x:DataType="views:SamplePropertyViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:SampleExtension.Views"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel Orientation="Horizontal" Spacing="4">
+        <TextBox Text="{Binding Text}" />
+        <Separator HorizontalAlignment="Stretch" />
+        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button Content="确定">
+
+                <Interaction.Behaviors>
+                    <ButtonClickEventTriggerBehavior>
+                        <InvokeCommandAction Command="{Binding ApplyCommand}" />
+                        <CallMethodAction MethodName="Close" TargetObject="root" />
+                    </ButtonClickEventTriggerBehavior>
+                </Interaction.Behaviors>
+            </Button>
+            <Button Content="取消">
+                <Interaction.Behaviors>
+                    <ButtonClickEventTriggerBehavior>
+                        <CallMethodAction MethodName="Close" TargetObject="root" />
+                    </ButtonClickEventTriggerBehavior>
+                </Interaction.Behaviors>
+            </Button>
+        </StackPanel>
+    </StackPanel>
+</Window>

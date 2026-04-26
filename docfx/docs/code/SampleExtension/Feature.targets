@@ -1,0 +1,14 @@
+<Project>
+
+    <ItemGroup>
+        <ProjectReference Include="$(MSBuildThisFileDirectory)SampleExtension.csproj"/>
+    </ItemGroup>
+
+    <PropertyGroup>
+        <DefineConstants>$(DefineConstants);FEATURE_SampleExtension;</DefineConstants>
+    </PropertyGroup>
+
+    <Target Name="ExtensionInit" BeforeTargets="BeforeBuild">
+        <Message Text="Building with SampleExtension enabled" Importance="high"/>
+    </Target>
+</Project>

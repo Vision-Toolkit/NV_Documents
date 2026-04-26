@@ -1,0 +1,28 @@
+<Project>
+
+    <PropertyGroup>
+        <!-- 定义目标框架 -->
+        <TargetFramework>net9.0</TargetFramework>
+        <EnableDynamicLoading>true</EnableDynamicLoading>
+
+        <SdkVersion>1.0.0</SdkVersion>
+        <UseLocalSDK>true</UseLocalSDK>
+
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Condition="!$(UseLocalSDK)" ExcludeAssets="runtime" Include="Tachyon.SDK" Version="$(SdkVersion)">
+            <Private>false</Private>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+
+        <ProjectReference Condition="$(UseLocalSDK)" Include="F:\TachyonProject\dev\Tachyon\sdk\TachyonSDK\TachyonSDK.csproj">
+            <Private>false</Private>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </ProjectReference>
+    </ItemGroup>
+
+
+</Project>
